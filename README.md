@@ -7,8 +7,18 @@
 ## ✨ 特色功能
 
 - **自動無感過濾**：攔截網頁複製行為，貼出時即為乾淨網址。
-- **全方位機制支援**：同時支援現代 `navigator.clipboard` (ClipboardItem) API 與舊式 `document.execCommand` 複製機制（包含 Threads、Instagram、Facebook 等複雜 Web 應用）。
+- **全方位機制支援**：同時支援現代 `navigator.clipboard` (ClipboardItem) API 與舊式 `document.execCommand` 複製機制。
 - **輕量與極致隱私**：採用 Manifest V3 與 `MAIN` world 注入，**不需要額外的讀寫剪貼簿權限**，也不會蒐集任何個人資料。
+
+---
+
+## 🧪 已測試驗證平台
+
+本擴充功能已特別針對以下採用特殊/複雜複製機制的平台進行測試與適配，點擊按鈕複製皆能穩定自動清理：
+
+- **Instagram** (針對背景建立隱藏 DOM input + `execCommand` 複製機制適配)
+- **Threads** (針對現代 `ClipboardItem` 複合資料寫入機制適配)
+- 一般帶有追蹤參數（如 `utm_*`）的各大常見新聞與文章網站
 
 ---
 
@@ -40,4 +50,5 @@
 .
 ├── manifest.json   # 擴充功能設定檔 (Manifest V3)
 ├── content.js      # 核心攔截與清理腳本
+├── LICENSE         # MIT 授權條款
 └── README.md
