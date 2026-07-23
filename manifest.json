@@ -1,0 +1,15 @@
+{
+  "manifest_version": 3,
+  "name": "Clean URL Copier",
+  "version": "1.2",
+  "description": "自動清理點擊網頁按鈕時複製的追蹤參數",
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "run_at": "document_start",
+      "world": "MAIN",
+      "all_frames": true
+    }
+  ]
+}
